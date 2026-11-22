@@ -1,0 +1,73 @@
+{
+ "tests": [
+  {
+   "in": {
+    "name": "yok.contoso.com",
+    "type": "A"
+   },
+   "dns": {},
+   "v": {
+    "status": "nxdomain",
+    "count": 0
+   }
+  },
+  {
+   "in": {
+    "name": "contoso.com",
+    "type": "AAAA"
+   },
+   "dns": {
+    "contoso.com|AAAA": {
+     "status": "ok",
+     "answers": []
+    }
+   },
+   "v": {
+    "status": "nodata"
+   }
+  },
+  {
+   "in": {
+    "name": "contoso.com",
+    "type": "TXT"
+   },
+   "dns": {
+    "contoso.com|TXT": {
+     "status": "ok",
+     "answers": [
+      {
+       "type": "TXT",
+       "TTL": 1,
+       "data": "\"v=spf1 \" \"-all\""
+      }
+     ]
+    }
+   },
+   "v": {
+    "status": "ok",
+    "count": 1
+   }
+  },
+  {
+   "in": {
+    "name": "contoso.com",
+    "type": "A"
+   },
+   "dns": {
+    "contoso.com|A": {
+     "status": "servfail"
+    }
+   },
+   "v": {
+    "status": "servfail"
+   }
+  },
+  {
+   "in": {
+    "name": "192.0.2.1",
+    "type": "A"
+   },
+   "err": "name"
+  }
+ ]
+}
